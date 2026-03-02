@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Node via Docker",
+            "type": "process",
+            "command": "docker",
+            "args": [
+                "run",
+                "-it",
+                "--rm",
+                "-v",
+                "${workspaceFolder}:/usr/src/app",
+                "-w",
+                "/usr/src/app",
+                "node",
+                "node",
+                ".vscode/run.js",
+                "${relativeFile}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
